@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "name": "Python",
+        "slug": "python"
+    },
+    {
+        "id": 2,
+        "name": "Java",
+        "slug": "java"
+    }
+]
