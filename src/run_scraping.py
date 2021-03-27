@@ -1,0 +1,21 @@
+from scraping.parsers import *
+import codecs
+import json
+
+
+
+parsers = (
+    (work, 'https://www.work.ua/ru/jobs-kyiv-python/'),
+    (rabota, 'https://rabota.ua/zapros/python/%D0%BA%D0%B8%D0%B5%D0%B2'),
+    (dou, 'https://jobs.dou.ua/vacancies/?category=Python&search=%D0%9A%D0%B8%D0%B5%D0%B2'),
+    (djinni, 'https://djinni.co/jobs/keyword-python/kyiv/')
+)
+
+jobs, errors = [], []
+for func, url in parsers:
+    j, e = func(url)
+    jobs += j
+    errors += e
+    
+with codecs.open('FROM_4_SITES.json', 'w', 'utf-8') as file:
+    json.dump(jobs, file, ensure_ascii=False, indent=4)
