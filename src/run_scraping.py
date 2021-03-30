@@ -2,7 +2,7 @@ from scraping.parsers import *
 import codecs
 import json
 
-from scraping.models import Vacancy, City, Language
+#from scraping.models import Vacancy, City, Language
 
 import os, sys
 proj = os.path.dirname(os.path.abspath('manage.py'))
@@ -10,6 +10,8 @@ sys.path.append(proj)
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "scraping_service.settings")
 import django
 django.setup()
+
+from scraping.models import Vacancy, City, Language
 
 
 
